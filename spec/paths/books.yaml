@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Books
+  summary: Get book list
+  responses:
+    "200":
+      description: Returns a list of books
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/book-list"
+
+post:
+  tags:
+    - Books
+  summary: Create a new book
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/book"
+  responses:
+    "200":
+      description: Returns one book
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/book"

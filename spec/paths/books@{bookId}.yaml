@@ -1,0 +1,43 @@
+parameters:
+  - name: bookId
+    in: path
+    required: true
+    schema:
+      type: string
+
+get:
+  tags:
+    - Books
+  summary: Get book by Id
+  responses:
+    "200":
+      description: Returns one book
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/book"
+
+put:
+  tags:
+    - Books
+  summary: Update on book
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/book"
+  responses:
+    "204":
+      description: Returns updated book
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/book"
+
+delete:
+  tags:
+    - Books
+  summary: Delete book by id
+  responses:
+    "204":
+      description: No content
